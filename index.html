@@ -546,6 +546,31 @@
     .exp-item { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 8px; text-align: center; }
   }
+
+    .show-more-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #4f8cff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project-desc {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+.project-desc.short {
+  max-height: 95px;
+}
+
+.project-desc.full {
+  max-height: 1000px;
+}
+
 </style>
 </head>
 <body>
@@ -588,7 +613,7 @@
 
   <div class="hero-stats">
     <div class="stat">
-      <div class="stat-val">1+</div>
+      <div class="stat-val">1.5</div>
       <div class="stat-label">Years Exp</div>
     </div>
     <div class="stat">
@@ -614,18 +639,18 @@
   <div class="exp-list">
     <div class="exp-item reveal">
       <div>
-        <div class="exp-role">Founder & Full Stack Developer</div>
-        <div class="exp-company">Prompt Cache</div>
-        <ul class="exp-bullets">
-          <li>Leading development of an AI-powered crowd-sourced answer platform from the ground up.</li>
-          <li>Built backend APIs with FastAPI and PostgreSQL, handling auth, data flow, and business logic.</li>
-          <li>Implemented semantic search using pgvector and Sentence Transformers for meaning-based retrieval.</li>
-          <li>Engineered secure Google OAuth + JWT auth flows from scratch without any pre-built auth libraries.</li>
-          <li>Managing production deployments across Railway, Supabase, and Vercel with CI/CD pipelines.</li>
-          <li>Diagnosed and resolved IPv6 networking incompatibilities between distributed services in production.</li>
-        </ul>
-      </div>
-      <div class="exp-period">Dec 2025 – Present</div>
+  <div class="exp-role">Python & Full Stack Developer</div>
+  <div class="exp-company">Freelancer</div>
+  <ul class="exp-bullets">
+    <li>Leading development of an AI-powered platform, focusing on backend architecture, system design, and scalable application development.</li>
+    <li>Backend Development: Building APIs using FastAPI and PostgreSQL, handling data flow, authentication, and business logic.</li>
+    <li>AI Integration: Implementing embedding-based search systems using pgvector and Sentence Transformers.</li>
+    <li>Authentication & Security: Developing secure authentication flows using Google OAuth and JWT.</li>
+    <li>Deployment & DevOps: Managing deployments across Railway, Supabase, and Vercel with CI/CD pipelines.</li>
+    <li>Problem Solving: Debugging and resolving real-world production issues across distributed services.</li>
+  </ul>
+</div>
+      <div class="exp-period">Jan 2026 – Present</div>
     </div>
 
     <div class="exp-item reveal" style="transition-delay:0.1s;">
@@ -653,6 +678,36 @@
   <div class="projects-grid">
     <div class="project-card reveal">
       <div class="project-header">
+        <div class="project-emoji">🌱</div>
+        <div class="project-links-row">
+          <a href="https://mysamadhi.in/" class="pill-link">↗ Live</a>
+        </div>
+      </div>
+      <div class="project-name">mysamadhi.in</div>
+      <div class="project-desc short" id="projectDesc">
+    Architected and built a production SaaS AI self-inquiry platform from scratch using a React/Vite frontend, FastAPI backend, and Supabase (PostgreSQL), deployed on Vercel and Render. Designed a custom AI persona system using the Anthropic Claude API to replicate philosophical cognitive patterns across six historical philosopher personas. Implemented Razorpay subscription management, sentiment-based “Living Plant” visualization logic, Cloudflare Turnstile bot protection, Abstract API email validation, Supabase RLS security, and a fully responsive mobile-first UI with custom animations and canvas-based social sharing.
+  </div>
+
+  <button class="show-more-btn" onclick="toggleDesc()">
+    Show More
+  </button>
+
+<div class="tech-tags">
+  <span class="tech-tag tag-blue">React</span>
+  <span class="tech-tag tag-purple">Vite</span>
+  <span class="tech-tag tag-green">FastAPI</span>
+  <span class="tech-tag tag-orange">Supabase</span>
+  <span class="tech-tag tag-blue">PostgreSQL</span>
+  <span class="tech-tag tag-purple">Anthropic Claude API</span>
+  <span class="tech-tag tag-green">Razorpay</span>
+  <span class="tech-tag tag-orange">Cloudflare Turnstile</span>
+  <span class="tech-tag tag-blue">Render</span>
+  <span class="tech-tag tag-purple">Vercel</span>
+</div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
         <div class="project-emoji">🧠</div>
         <div class="project-links-row">
           <a href="https://prompt-cache.vercel.app/" class="pill-link">↗ Live</a>
@@ -676,7 +731,7 @@
       <div class="project-header">
         <div class="project-emoji">🔍</div>
         <div class="project-links-row">
-          <a href="https://ai-code-reviewer-two-alpha.vercel.app/" class="pill-link">↗ Live</a>
+          <!-- <a href="https://ai-code-reviewer-two-alpha.vercel.app/" class="pill-link">↗ Live</a> -->
           <a href="https://github.com/Lucky-droit/Ai-Code-Reviewer" class="pill-link">GitHub</a>
         </div>
       </div>
@@ -693,27 +748,7 @@
       </div>
     </div>
 
-    <div class="project-card reveal" style="transition-delay:0.2s;">
-      <div class="project-header">
-        <div class="project-emoji">📊</div>
-        <div class="project-links-row">
-          <a href="https://github.com/Lucky-droit/Developer-Dashboard" class="pill-link">GitHub</a>
-        </div>
-      </div>
-      <div class="project-name">Developer Dashboard</div>
-      <div class="project-desc">
-        Real-time dashboard aggregating GitHub activity, Hacker News trends, and job listings in one place. Features live polling and personalized filtering by language and tech stack.
-      </div>
-      <div class="tech-tags">
-        <span class="tech-tag tag-blue">FastAPI</span>
-        <span class="tech-tag tag-orange">React</span>
-        <span class="tech-tag tag-green">GitHub API</span>
-        <span class="tech-tag tag-purple">Real-Time</span>
-        <span class="tech-tag tag-blue">Railway</span>
-      </div>
-    </div>
-  </div>
-</div>
+</div> 
 
 <!-- SKILLS -->
 <div class="wrapper" id="skills">
@@ -741,7 +776,7 @@
     <div class="skill-card reveal" style="transition-delay:0.1s;">
       <div class="skill-card-title">Frontend</div>
       <div class="skill-pills">
-        <span class="skill-pill">React</span>
+        <span class="skill-pill">React/Vite</span>
         <span class="skill-pill">HTML & CSS</span>
       </div>
     </div>
@@ -751,7 +786,7 @@
         <span class="skill-pill">PostgreSQL</span>
         <span class="skill-pill">MongoDB</span>
         <span class="skill-pill">pgvector</span>
-        <span class="skill-pill">SQLite</span>
+        <span class="skill-pill">Supabase</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay:0.2s;">
@@ -770,6 +805,7 @@
         <span class="skill-pill">Vercel</span>
         <span class="skill-pill">Supabase</span>
         <span class="skill-pill">CI/CD</span>
+        <span class="skill-pill">Render</span>
       </div>
     </div>
   </div>
@@ -856,6 +892,7 @@
 </footer>
 
 <script>
+ 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -866,6 +903,20 @@
   }, { threshold: 0.08 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+   function toggleDesc() {
+  const desc = document.getElementById("projectDesc");
+  const btn = document.querySelector(".show-more-btn");
+
+  if (desc.classList.contains("short")) {
+    desc.classList.remove("short");
+    desc.classList.add("full");
+    btn.innerText = "Show Less";
+  } else {
+    desc.classList.remove("full");
+    desc.classList.add("short");
+    btn.innerText = "Show More";
+  }
+}
 </script>
 </body>
 </html>
